@@ -334,8 +334,8 @@
         <option value="10">Class 10th</option>
       </select>
 
-      <label for="timeInput">Time Slot (e.g., 4:00 PM - 5:00 PM):</label>
-      <input type="text" id="timeInput" placeholder="4:00 PM - 5:00 PM">
+      <label for="timeInput">Time Slot (e.g., 4:00 PM - 6:00 PM):</label>
+      <input type="text" id="timeInput" placeholder="4:00 PM - 6:00 PM">
 
       <label for="subjectInput">Subject:</label>
       <input type="text" id="subjectInput" placeholder="Mathematics">
@@ -354,8 +354,8 @@
   const defaultSchedules = {};
   for(let i = 6; i <= 10; i++) {
     defaultSchedules[i] = [
-      { time: "4:00 PM - 5:00 PM", subject: "Mathematics", teacher: "Main Faculty" },
-      { time: "5:00 PM - 6:00 PM", subject: "Science", teacher: "Science Faculty" }
+      { time: "4:00 PM - 6:00 PM", subject: "Mathematics,Science,Social Science,Hindi,Sanskrit,", teacher: "Main Faculty" },
+      { time: "6:00 PM - 10:00 PM", subject: "Mathematics,Science,Social Science,Hindi,Sanskrit", teacher: "Science Faculty" }
     ];
   }
 

@@ -27,7 +27,6 @@
       width: 100%;
       max-width: 520px;
     }
-    /* Announcement Ticker */
     #announcementBanner {
       background: #fdf2f8;
       border: 1px solid #fbcfe8;
@@ -179,7 +178,6 @@
 <body>
 
 <div class="container">
-  <!-- Live Announcement Ticker -->
   <div id="announcementBanner">📢 Announcement: Welcome to Success Mantra Coaching! Check below for daily schedules.</div>
 
   <header>
@@ -299,6 +297,12 @@
       <select id="timeInput">
         <option value="4:00 PM - 6:00 PM">4:00 PM - 6:00 PM</option>
         <option value="6:00 PM - 8:00 PM">6:00 PM - 8:00 PM</option>
+        <option value="4:00 PM - 8:00 PM">4:00 PM - 8:00 PM</option>
+        <option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>
+        <option value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</option>
+        <option value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</option>
+        <option value="7:00 PM - 8:00 PM">7:00 PM - 8:00 PM</option>
+        <option value="8:00 PM - 9:00 PM">8:00 PM - 9:00 PM</option>
       </select>
 
       <label for="subjectInput">Subject:</label>
@@ -341,16 +345,15 @@
     ];
   });
 
-  let schedules = JSON.parse(localStorage.getItem('success_mantra_schedules_v3')) || defaultSchedules;
+  let schedules = JSON.parse(localStorage.getItem('success_mantra_schedules_v4')) || defaultSchedules;
   let announcement = localStorage.getItem('success_mantra_announcement') || "📢 Announcement: Welcome to Success Mantra Coaching! Check below for daily schedules.";
 
   function saveAll() {
-    localStorage.setItem('success_mantra_schedules_v3', JSON.stringify(schedules));
+    localStorage.setItem('success_mantra_schedules_v4', JSON.stringify(schedules));
     localStorage.setItem('success_mantra_announcement', announcement);
   }
 
   function renderSchedule() {
-    // Render Announcement
     document.getElementById('announcementBanner').innerText = announcement;
     document.getElementById('announcementInput').value = announcement;
 

@@ -318,12 +318,12 @@
       <label for="teacherInput">Teacher Name:</label>
       <select id="teacherInput">
         <option value="Sneha Mam">Sneha Mam</option>
+        <option value="Priya Mam">Priya Mam</option>
         <option value="Janvi Mam">Janvi Mam</option>
         <option value="Saroj Mam">Saroj Mam</option>
-        <option value="Priya Mam">Priya Mam</option>
         <option value="Poonam Mam">Poonam Mam</option>
+        <option value="Tisa Mam">Tisa Mam</option>
         <option value="Divya Mam">Divya Mam</option>
-        
       </select>
 
       <button class="action-btn" onclick="addSlot()">Add / Update Slot</button>
@@ -344,16 +344,16 @@
   const defaultSchedules = {};
   classKeys.forEach(key => {
     defaultSchedules[key] = [
-      { time: "4:00 PM - 6:00 PM", subject: "Mathematics", teacher: "Teacher A" },
-      { time: "6:00 PM - 8:00 PM", subject: "Science", teacher: "Teacher B" }
+      { time: "4:00 PM - 6:00 PM", subject: "Mathematics", teacher: "Sneha Mam" },
+      { time: "6:00 PM - 8:00 PM", subject: "Science", teacher: "Priya Mam" }
     ];
   });
 
-  let schedules = JSON.parse(localStorage.getItem('success_mantra_schedules_v4')) || defaultSchedules;
+  let schedules = JSON.parse(localStorage.getItem('success_mantra_schedules_v5')) || defaultSchedules;
   let announcement = localStorage.getItem('success_mantra_announcement') || "📢 Announcement: Welcome to Success Mantra Coaching! Check below for daily schedules.";
 
   function saveAll() {
-    localStorage.setItem('success_mantra_schedules_v4', JSON.stringify(schedules));
+    localStorage.setItem('success_mantra_schedules_v5', JSON.stringify(schedules));
     localStorage.setItem('success_mantra_announcement', announcement);
   }
 

@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Mantra Coaching - Official Portal</title>
+  <!-- html2canvas library for turning HTML into high-quality poster images -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --accent: #f59e0b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --border: #e2e8f0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    /* TOP BRANDING BANNER & HEADER */
+    .top-brand-banner {
+      background: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .top-brand-banner::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+    .brand-slogan-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(4px);
+      color: #fef08a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .brand-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 0 0 4px 0;
+      letter-spacing: 0.5px;
+    }
+    .brand-sub {
+      color: #c7d2fe;
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* ANNOUNCEMENT TICKER BANNER */
+    .announcement-banner {
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .announcement-icon {
+      font-size: 1.1rem;
+    }
+
+    /* TABS */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 16px;
+    }
+    
+    label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+    select, input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+    button.action-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    th { background: #f1f5f9; color: #475569; }
+    
+    .hidden { display: none; }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: #e0e7ff;
+      color: #3730a3;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .creds-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: #1e40af;
+      margin-bottom: 12px;
+    }
+
+    /* AESTHETIC WHATSAPP POSTER STYLING */
+    #posterCard {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    #posterCard::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+    .poster-header {
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+    .poster-header h2 { margin: 0; font-size: 1.4rem; letter-spacing: 0.5px; }
+    .poster-header p { color: #c7d2fe; margin-top: 4px; font-size: 0.85rem; }
+    .poster-slot {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .poster-time { font-weight: 700; color: #a5b4fc; font-size: 0.9rem; }
+    .poster-subject { font-weight: 600; font-size: 1rem; color: #ffffff; }
+    .poster-teacher { font-size: 0.8rem; color: #cbd5e1; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- PROMINENT BRANDING TOP HEADER -->
+  <div class="top-brand-banner">
+    <div class="brand-slogan-badge">✨ Empowering Excellence | Classes 6th - 10th</div>
+    <div class="brand-title">SUCCESS MANTRA COACHING</div>
+    <p class="brand-sub">Daily Batch Timetable & Announcement Portal</p>
+  </div>
+
+  <!-- EDITABLE ANNOUNCEMENT TICKER BANNER -->
+  <div class="announcement-banner">
+    <span class="announcement-icon">📢</span>
+    <span id="announcementText">Notice: Admissions Open for Academic Session 2024-25 | Check class timings below.</span>
+  </div>
+
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="switchView('student')">Student View</button>
+    <button class="tab-btn" onclick="switchView('admin')">Admin Panel</button>
+  </div>
+
+  <!-- STUDENT VIEW -->
+  <div id="studentView">
+    <div class="card">
+      <label for="classSelect">Select Your Class:</label>
+      <select id="classSelect" onchange="renderSchedule()">
+        <option value="6">Class 6th</option>
+        <option value="7">Class 7th</option>
+        <option value="8">Class 8th</option>
+        <option value="9">Class 9th</option>
+        <option value="10">Class 10th</option>
+      </select>
+    </div>
+
+    <!-- Website Timetable Display -->
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0;">Today's Live Schedule</h3>
+        <span class="badge" id="classBadge">Class 6th</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Time Slot</th>
+            <th>Subject</th>
+            <th>Teacher</th>
+          </tr>
+        </thead>
+        <tbody id="scheduleTableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Aesthetic Poster Section -->
+    <div style="margin-top:24px;">
+      <h3 style="font-size:1rem; color:#475569; margin-bottom:8px;">Aesthetic WhatsApp Image Preview</h3>
+      <div id="posterCard">
+        <div class="poster-header">
+          <div style="font-size: 0.8rem; letter-spacing: 1px; color: #a5b4fc; margin-bottom: 4px;">SUCCESS MANTRA COACHING</div>
+          <h2 id="posterTitle">CLASS 6TH SCHEDULE</h2>
+          <p id="posterNotice">Official Daily Batch Timings</p>
+        </div>
+        <div id="posterSlots"></div>
+        <div style="text-align:center; margin-top:16px; font-size:0.75rem; color:#a5b4fc;">
+          Generated automatically • Please arrive 5 mins early
+        </div>
+      </div>
+      
+      <button class="action-btn" style="margin-top:12px; background:#10b981;" onclick="downloadPoster()">
+        📸 Download Image for WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- ADMIN VIEW -->
+  <div id="adminView" class="hidden">
+    <div id="adminAuth" class="card">
+      <h3>Admin Login</h3>
+      <div class="creds-box">
+        <b>Demo Login Details:</b><br>
+        Admin ID: <code>admin</code><br>
+        Password: <code>1234</code>
+      </div>
+      
+      <label for="adminUser">Admin ID:</label>
+      <input type="text" id="adminUser" placeholder="admin">
+
+      <label for="adminPass">Password:</label>
+      <input type="password" id="adminPass" placeholder="1234">
+
+      <button class="action-btn" onclick="loginAdmin()">Login</button>
+    </div>
+
+    <div id="adminContent" class="card hidden">
+      <h3>1. Update Announcement Banner</h3>
+      <label for="noticeInput">Header Notice / Announcement:</label>
+      <input type="text" id="noticeInput" placeholder="Admissions Open for New Session!">
+      <button class="action-btn" style="background:#f59e0b; margin-bottom:20px;" onclick="updateNotice()">Save Announcement</button>
+
+      <h3>2. Update Class Timetable (6th-10th)</h3>
+      <label for="adminClassSelect">Select Class Standard:</label>
+      <select id="adminClassSelect">
+        <option value="6">Class 6th</option>
+        <option value="7">Class 7th</option>
+        <option value="8">Class 8th</option>
+        <option value="9">Class 9th</option>
+        <option value="10">Class 10th</option>
+      </select>
+
+      <label for="timeInput">Time Slot (e.g., 4:00 PM - 5:00 PM):</label>
+      <input type="text" id="timeInput" placeholder="4:00 PM - 5:00 PM">
+
+      <label for="subjectInput">Subject:</label>
+      <input type="text" id="subjectInput" placeholder="Mathematics">
+
+      <label for="teacherInput">Teacher Name:</label>
+      <input type="text" id="teacherInput" placeholder="Faculty Name">
+
+      <button class="action-btn" onclick="addSlot()">Add / Update Slot</button>
+      <button class="action-btn" style="background:#ef4444; margin-top:8px;" onclick="clearClassData()">Clear Selected Class Schedule</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Default schedules for classes 6 to 10
+  const defaultSchedules = {};
+  for(let i = 6; i <= 10; i++) {
+    defaultSchedules[i] = [
+      { time: "4:00 PM - 5:00 PM", subject: "Mathematics", teacher: "Main Faculty" },
+      { time: "5:00 PM - 6:00 PM", subject: "Science", teacher: "Science Faculty" }
+    ];
+  }
+
+  let schedules = JSON.parse(localStorage.getItem('success_mantra_schedules')) || defaultSchedules;
+  let currentNotice = localStorage.getItem('success_mantra_notice') || "Notice: Admissions Open for Academic Session 2024-25 | Check class timings below.";
+
+  function saveSchedules() {
+    localStorage.setItem('success_mantra_schedules', JSON.stringify(schedules));
+  }
+
+  function renderNotice() {
+    document.getElementById('announcementText').innerText = currentNotice;
+  }
+
+  function updateNotice() {
+    const val = document.getElementById('noticeInput').value.trim();
+    if(val) {
+      currentNotice = val;
+      localStorage.setItem('success_mantra_notice', currentNotice);
+      renderNotice();
+      alert("Announcement banner updated successfully!");
+    }
+  }
+
+  function renderSchedule() {
+    renderNotice();
+    const selectedClass = document.getElementById('classSelect').value;
+    document.getElementById('classBadge').innerText = "Class " + selectedClass + "th";
+    document.getElementById('posterTitle').innerText = "CLASS " + selectedClass + "TH SCHEDULE";
+
+    const tbody = document.getElementById('scheduleTableBody');
+    const posterSlots = document.getElementById('posterSlots');
+    
+    tbody.innerHTML = '';
+    posterSlots.innerHTML = '';
+
+    const classData = schedules[selectedClass] || [];
+    if(classData.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="3" style="text-align:center; color:#94a3b8;">No lectures scheduled today</td></tr>';
+      posterSlots.innerHTML = '<div style="text-align:center; color:#cbd5e1; padding:12px;">No lectures scheduled today</div>';
+      return;
+    }
+
+    classData.forEach(slot => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td><b>${slot.time}</b></td><td>${slot.subject}</td><td>${slot.teacher}</td>`;
+      tbody.appendChild(tr);
+
+      const posterItem = document.createElement('div');
+      posterItem.className = 'poster-slot';
+      posterItem.innerHTML = `
+        <div>
+          <div class="poster-subject">${slot.subject}</div>
+          <div class="poster-teacher">Faculty: ${slot.teacher}</div>
+        </div>
+        <div class="poster-time">${slot.time}</div>
+      `;
+      posterSlots.appendChild(posterItem);
+    });
+  }
+
+  function downloadPoster() {
+    const posterElement = document.getElementById('posterCard');
+    const selectedClass = document.getElementById('classSelect').value;
+
+    html2canvas(posterElement, { scale: 2 }).then(canvas => {
+      const link = document.createElement('a');
+      link.download = `SuccessMantra_Class_${selectedClass}_Schedule.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  }
+
+  function switchView(view) {
+    const tabs = document.querySelectorAll('.tab-btn');
+    if(view === 'student') {
+      tabs[0].classList.add('active');
+      tabs[1].classList.remove('active');
+      document.getElementById('studentView').classList.remove('hidden');
+      document.getElementById('adminView').classList.add('hidden');
+      renderSchedule();
+    } else {
+      tabs[1].classList.add('active');
+      tabs[0].classList.remove('active');
+      document.getElementById('studentView').classList.add('hidden');
+      document.getElementById('adminView').classList.remove('hidden');
+    }
+  }
+
+  function loginAdmin() {
+    const user = document.getElementById('adminUser').value.trim();
+    const pass = document.getElementById('adminPass').value.trim();
+    if(user === "admin" && pass === "1234") {
+      document.getElementById('adminAuth').classList.add('hidden');
+      document.getElementById('adminContent').classList.remove('hidden');
+      document.getElementById('noticeInput').value = currentNotice;
+    } else {
+      alert("Incorrect Admin ID or Password! Use ID: admin, Password: 1234");
+    }
+  }
+
+  function addSlot() {
+    const targetClass = document.getElementById('adminClassSelect').value;
+    const time = document.getElementById('timeInput').value.trim();
+    const subject = document.getElementById('subjectInput').value.trim();
+    const teacher = document.getElementById('teacherInput').value.trim();
+
+    if(!time || !subject) {
+      alert("Please enter Time and Subject.");
+      return;
+    }
+
+    if(!schedules[targetClass]) schedules[targetClass] = [];
+    schedules[targetClass].push({ time, subject, teacher: teacher || "Staff" });
+    saveSchedules();
+    alert(`Added slot to Class ${targetClass}th!`);
+
+    document.getElementById('timeInput').value = '';
+    document.getElementById('subjectInput').value = '';
+    document.getElementById('teacherInput').value = '';
+    
+    document.getElementById('classSelect').value = targetClass;
+    renderSchedule();
+  }
+
+  function clearClassData() {
+    const targetClass = document.getElementById('adminClassSelect').value;
+    schedules[targetClass] = [];
+    saveSchedules();
+    alert(`Cleared Class ${targetClass}th timetable.`);
+    renderSchedule();
+  }
+
+  renderSchedule();
+</script>
+
+</body>
+</html>
+```

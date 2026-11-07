@@ -255,15 +255,15 @@
       <h3>Admin Login</h3>
       <div class="creds-box">
         <b>Demo Login Details:</b><br>
-        Admin ID: <code>admin</code><br>
-        Password: <code>1234</code>
+        Admin ID: <code>Sneha</code><br>
+        Password: <code>1308</code>
       </div>
       
       <label for="adminUser">Admin ID:</label>
-      <input type="text" id="adminUser" placeholder="admin">
+      <input type="text" id="adminUser" placeholder="Sneha">
 
       <label for="adminPass">Password:</label>
-      <input type="password" id="adminPass" placeholder="1234">
+      <input type="password" id="adminPass" placeholder="1308">
 
       <button class="action-btn" onclick="loginAdmin()">Login</button>
     </div>
@@ -349,11 +349,11 @@
     ];
   });
 
-  let schedules = JSON.parse(localStorage.getItem('success_mantra_schedules_v5')) || defaultSchedules;
+  let schedules = JSON.parse(localStorage.getItem('success_mantra_schedules_v6')) || defaultSchedules;
   let announcement = localStorage.getItem('success_mantra_announcement') || "📢 Announcement: Welcome to Success Mantra Coaching! Check below for daily schedules.";
 
   function saveAll() {
-    localStorage.setItem('success_mantra_schedules_v5', JSON.stringify(schedules));
+    localStorage.setItem('success_mantra_schedules_v6', JSON.stringify(schedules));
     localStorage.setItem('success_mantra_announcement', announcement);
   }
 
@@ -461,7 +461,7 @@
       document.getElementById('adminAuth').classList.add('hidden');
       document.getElementById('adminContent').classList.remove('hidden');
     } else {
-      alert("Incorrect Admin ID or Password!);
+      alert("Incorrect Admin ID or Password! Use ID: Sneha, Password: 1308");
     }
   }
 

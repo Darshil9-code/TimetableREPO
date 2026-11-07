@@ -121,16 +121,6 @@
       font-weight: 600;
     }
 
-    .creds-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      padding: 10px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      color: #1e40af;
-      margin-bottom: 12px;
-    }
-
     /* AESTHETIC WHATSAPP POSTER STYLING */
     #posterCard {
       background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
@@ -253,13 +243,12 @@
   <div id="adminView" class="hidden">
     <div id="adminAuth" class="card">
       <h3>Admin Login</h3>
-     
-      
+
       <label for="adminUser">Admin ID:</label>
-      <input type="text" id="adminUser" placeholder="Sneha">
+      <input type="text" id="adminUser" placeholder="Enter Admin ID">
 
       <label for="adminPass">Password:</label>
-      <input type="password" id="adminPass" placeholder="1308">
+      <input type="password" id="adminPass" placeholder="Enter Password">
 
       <button class="action-btn" onclick="loginAdmin()">Login</button>
     </div>
@@ -457,7 +446,7 @@
       document.getElementById('adminAuth').classList.add('hidden');
       document.getElementById('adminContent').classList.remove('hidden');
     } else {
-      alert("Incorrect Admin ID or Password! Use ID: Sneha, Password: 1308");
+      alert("Incorrect Admin ID or Password!");
     }
   }
 
